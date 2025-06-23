@@ -7,10 +7,30 @@
     <title>Animate</title>
 
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, #e0f7fa, #ffffff);
+        font-family: Arial, sans-serif;
+      }
+
       #container {
         display: flex;
         justify-content: center;
-        border: 1px #000 solid;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+        border: 2px solid #ccc;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         width: fit-content;
         height: fit-content;
       }

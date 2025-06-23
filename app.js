@@ -6,6 +6,7 @@ const path = require("path");
 const folderPath = "./output";
 const app = express();
 app.use(express.static(path.join(__dirname, "waterdrop")));
+// app.use(express.static(path.join(__dirname, "flowerbloom")));
 app.use(express.static(__dirname));
 app.use(
   cors({
