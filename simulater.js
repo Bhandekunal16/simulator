@@ -2,7 +2,7 @@ const c = document.getElementById("container");
 
 async function a() {
   const responses = [];
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i < 16; i++) {
     responses.push(`http://localhost:3000/image_${i}.png`);
   }
 
@@ -20,7 +20,7 @@ async function a() {
     c.appendChild(img);
 
     index = (index + 1) % responses.length;
-  }, 100);
+  }, 200);
 }
 
 a();

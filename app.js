@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const folderPath = "./output";
 const app = express();
-app.use(express.static(path.join(__dirname, "output")));
+app.use(express.static(path.join(__dirname, "waterdrop")));
 app.use(express.static(__dirname));
 app.use(
   cors({
