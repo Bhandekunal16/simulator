@@ -1,7 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-const fs = require("fs");
-const path = require("path");
+const [express, cors, fs, path] = [
+  require("express"),
+  require("cors"),
+  require("fs"),
+  require("path"),
+];
 const { Observable } = require("rxjs");
 
 const app = express();
