@@ -21,7 +21,7 @@ app.use(
 const port = 3000;
 
 const fileNames = fs.readdirSync(photo);
-const fullPaths = fileNames.map((file) => path.join(folderPath, file));
+const fullPaths = fileNames.map((file) => path.join(photo, file));
 
 const x = new Observable((r) => {
   for (let i = 0; i < fullPaths.length; i++) {
