@@ -1,11 +1,13 @@
 const c = document.getElementById("container");
+const body = document.body;
 
 async function a() {
-  let len;
+  let len, bg;
   fetch("http://localhost:3000/config")
     .then(async (res) => {
       const Res = await res.json();
       len = Res.len;
+      bg = Res.bg;
     })
     .then(() => {
       if (len > 0) {
@@ -15,6 +17,8 @@ async function a() {
         }
 
         let index = 0;
+
+        body.style.backgroundColor = bg;
 
         setInterval(() => {
           if (c.firstChild) {

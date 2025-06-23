@@ -12,6 +12,13 @@ const port = 3000;
 const photos = ["waterdrop", "flowerbloom", "bomb"];
 const photo = photos[0];
 
+let bg;
+if (photo == "flowerbloom") {
+  bg = "#fff";
+} else {
+  bg = "#0a1e2d";
+}
+
 app.use(express.static(path.join(__dirname, photo)));
 app.use(express.static(__dirname));
 
@@ -42,7 +49,7 @@ app.get("/", (_, res) => {
 });
 
 app.get("/config", (_, res) => {
-  res.send({ len: fullPaths.length });
+  res.send({ len: fullPaths.length, bg });
 });
 
 app.listen(port, "0.0.0.0", () => {
