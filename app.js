@@ -10,7 +10,7 @@ const app = express();
 const port = 3000;
 
 const photos = ["waterdrop", "flowerbloom", "bomb"];
-const photo = photos[1];
+const photo = photos[0];
 
 let bg;
 bg = photo == "flowerbloom" ? "#fff" : "#0a1e2d";
