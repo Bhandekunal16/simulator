@@ -6,6 +6,7 @@ const path = require("path");
 const folderPath = "./output";
 const app = express();
 app.use(express.static(path.join(__dirname, "output")));
+app.use(express.static(__dirname));
 app.use(
   cors({
     origin: "*",
@@ -27,6 +28,10 @@ x.subscribe((i) => {
   app.get(`/${i}`, (req, res) => {
     res.send(`${i}`);
   });
+});
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.listen(port, "0.0.0.0", () => {
