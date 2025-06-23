@@ -7,6 +7,7 @@ const [express, cors, fs, path] = [
 const { Observable } = require("rxjs");
 
 const app = express();
+const port = 3000;
 
 const photos = ["waterdrop", "flowerbloom"];
 const photo = photos[0];
@@ -20,7 +21,6 @@ app.use(
     methods: ["GET"],
   })
 );
-const port = 3000;
 
 const fileNames = fs.readdirSync(photo);
 const fullPaths = fileNames.map((file) => path.join(photo, file));
