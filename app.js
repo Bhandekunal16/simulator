@@ -9,7 +9,7 @@ const { Observable } = require("rxjs");
 const app = express();
 const port = 3000;
 
-const photos = ["waterdrop", "flowerbloom"];
+const photos = ["waterdrop", "flowerbloom", "bomb"];
 const photo = photos[0];
 
 app.use(express.static(path.join(__dirname, photo)));
