@@ -3,7 +3,7 @@ const { Observable } = require("rxjs");
 const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
-const folderPath = "./output";
+
 const app = express();
 
 const photos = ["waterdrop", "flowerbloom"];
