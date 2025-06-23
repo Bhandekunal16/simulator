@@ -5,8 +5,12 @@ const fs = require("fs");
 const path = require("path");
 const folderPath = "./output";
 const app = express();
-app.use(express.static(path.join(__dirname, "waterdrop")));
-// app.use(express.static(path.join(__dirname, "flowerbloom")));
+
+const photos = ["waterdrop", "flowerbloom"];
+const photo = photos[0];
+
+app.use(express.static(path.join(__dirname, photo)));
+
 app.use(express.static(__dirname));
 app.use(
   cors({
@@ -16,7 +20,7 @@ app.use(
 );
 const port = 3000;
 
-const fileNames = fs.readdirSync(folderPath);
+const fileNames = fs.readdirSync(photo);
 const fullPaths = fileNames.map((file) => path.join(folderPath, file));
 
 const x = new Observable((r) => {
@@ -33,6 +37,10 @@ x.subscribe((i) => {
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/config", (req, res) => {
+  res.send({ len: fullPaths.length });
 });
 
 app.listen(port, "0.0.0.0", () => {
