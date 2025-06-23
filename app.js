@@ -13,11 +13,7 @@ const photos = ["waterdrop", "flowerbloom", "bomb"];
 const photo = photos[1];
 
 let bg;
-if (photo == "flowerbloom") {
-  bg = "#fff";
-} else {
-  bg = "#0a1e2d";
-}
+bg = photo == "flowerbloom" ? "#fff" : "#0a1e2d";
 
 app.use(express.static(path.join(__dirname, photo)));
 app.use(express.static(__dirname));
