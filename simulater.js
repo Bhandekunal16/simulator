@@ -2,8 +2,8 @@ const c = document.getElementById("container");
 
 async function a() {
   const responses = [];
-  for (let i = 1; i < 1000; i++) {
-    responses.push(`http://localhost:3000/image_${i}.jpg`);
+  for (let i = 1; i < 6; i++) {
+    responses.push(`http://localhost:3000/image_${i}.png`);
   }
 
   let index = 0;
@@ -20,7 +20,7 @@ async function a() {
     c.appendChild(img);
 
     index = (index + 1) % responses.length;
-  }, 3000);
+  }, 100);
 }
 
 a();
