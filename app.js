@@ -13,8 +13,8 @@ const photos = ["waterdrop", "flowerbloom"];
 const photo = photos[0];
 
 app.use(express.static(path.join(__dirname, photo)));
-
 app.use(express.static(__dirname));
+
 app.use(
   cors({
     origin: "*",
