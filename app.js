@@ -32,16 +32,16 @@ const x = new Observable((r) => {
 });
 
 x.subscribe((i) => {
-  app.get(`/${i}`, (req, res) => {
+  app.get(`/${i}`, (_, res) => {
     res.send(`${i}`);
   });
 });
 
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/config", (req, res) => {
+app.get("/config", (_, res) => {
   res.send({ len: fullPaths.length });
 });
 
